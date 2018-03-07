@@ -1,0 +1,26 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww12840\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0  Simulation exercise for "Simultaneous Inference for Conditional Average Treatment Effect and Other Structural Functions"\
+\
+Authors: Victor Chernozhukov, Vira Semenova\
+Corresponding author: Vira Semenova vsemen@mit.edu\
+\
+Abstract: Monte Carlo simulations for two stage estimation of the Best Linear Predictor \
+           in a misspecified linear model Y = p (X)'beta_0 + r(X) + epsilon, \
+           whose outcome Y is partilly missing.\
+\
+           control vector Z~ N(0, T(rho)), T(rho) is Toeplitz(rho)\
+           outcome: Y = g(Z) + eps =  Z %*%gamma + eps, gamma_j = 1/j^2, eps ~ N(0,1)\
+           presence indicator: D = B(L(Z%*%delta )), L(t) is logistic function\
+           B(p) is a bernoulli draw with probability p\
+\
+           The technical regressors p(X) = Z[,1:d] are the first d components of control vector Z\
+\
+Description: simulate data (Y,D,Z) using simulate_data\
+                 estimate the doubly robust signal Y.hat = g.hat + D/s.hat (y  - g.hat)\
+                run OLS on complete data (D=1), IPW, and Orthogonal Series using cross-fitting with (K=2) folds\
+               compute bias, standard error, root mean squared error (RMSE), rejection frequency.}
